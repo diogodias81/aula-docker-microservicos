@@ -1,40 +1,71 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Recados</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>📌 Mural de Recados</h1>
-            <p>Deixe sua mensagem abaixo</p>
-        </header>
+<!DOCTYPE html> 
 
-        <main>
-            <form id="form-recado" class="card">
-                <div class="form-group">
-                    <label for="texto">Digite seu recado:</label>
-                    <input type="text" id="texto" placeholder="Ex: Estudar Docker hoje à noite..." required>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar Recado</button>
-            </form>
+<html lang="pt-BR"> 
 
-            <div id="mensagem" class="status-message"></div>
+<head> 
 
-            <section class="recados-section">
-                <div class="section-header">
-                    <h2>Recados Recebidos</h2>
-                    <button id="btn-atualizar" class="btn btn-secondary">🔄 Atualizar</button>
-                </div>
-                <ul id="lista-recados" class="lista-recados">
-                    </ul>
-            </section>
-        </main>
-    </div>
+ <meta charset="UTF-8" /> 
 
-    <script src="script.js"></script>
-</body>
-</html>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+
+ <title>Quadro de Recados</title> 
+
+ <link rel="stylesheet" href="style.css" /> 
+
+</head> 
+
+<body> 
+
+ <div class="container"> 
+
+   <h1>Quadro de Recados</h1> 
+
+   <p class="subtitulo">Frontend + Backend + PostgreSQL + Docker</p> 
+
+ 
+
+   <form id="form-recado"> 
+
+     <input 
+
+       type="text" 
+
+       id="texto" 
+
+       placeholder="Digite um recado" 
+
+       required 
+
+     /> 
+
+     <button type="submit">Enviar</button> 
+
+   </form> 
+
+ 
+
+   <div class="acoes"> 
+
+     <button id="btn-atualizar">Atualizar lista</button> 
+
+   </div> 
+
+ 
+
+   <h2>Recados</h2> 
+
+   <ul id="lista-recados"></ul> 
+
+ 
+
+   <p id="mensagem"></p> 
+
+ </div> 
+
+ 
+
+ <script src="script.js"></script> 
+
+</body> 
+
+</html> 

@@ -1,16 +1,75 @@
-version: '3.8'
+services: 
 
-services:
-  backend:
-    build: ./backend
-    container_name: backend-recados
-    ports:
-      - "3000:3000"
+ db: 
 
-  frontend:
-    build: ./frontend
-    container_name: frontend-recados
-    ports:
-      - "8080:80"
-    volumes:
-      - ./frontend:/usr/share/nginx/html
+   image: postgres:16-alpine 
+
+   container_name: postgres-recados 
+
+   environment: 
+
+     POSTGRES_DB: recadosdb 
+
+     POSTGRES_USER: aluno 
+
+     POSTGRES_PASSWORD: senha123 
+
+   ports: 
+
+     - "5432:5432" 
+
+   volumes: 
+
+     - postgres_data:/var/lib/postgresql/data 
+
+     - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql 
+
+ 
+
+ backend: 
+
+   build: ./backend 
+
+   container_name: backend-recados 
+
+   ports: 
+
+     - "3000:3000" 
+
+   environment: 
+
+     DB_HOST: db 
+
+     DB_PORT: 5432 
+
+     DB_NAME: recadosdb 
+
+     DB_USER: aluno 
+
+     DB_PASSWORD: senha123 
+
+   depends_on: 
+
+     - db 
+
+ 
+
+ frontend: 
+
+   build: ./frontend 
+
+   container_name: frontend-recados 
+
+   ports: 
+
+     - "8080:80" 
+
+   depends_on: 
+
+     - backend 
+
+ 
+
+volumes: 
+
+ postgres_data:
