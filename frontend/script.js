@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000"; 
+const API_URL = "http://10.77.12.175:3000";
 
  const form = document.getElementById("form-recado"); 
 
