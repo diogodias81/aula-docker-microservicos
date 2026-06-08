@@ -1,14 +1,16 @@
+version: '3.8'
+
 services:
   backend:
     build: ./backend
     container_name: backend-recados
-    ports:
-      - "3000:3000"
+   
+    network_mode: "host" 
 
   frontend:
     build: ./frontend
     container_name: frontend-recados
     ports:
       - "8080:80"
-    depends_on:
-      - backend 
+    volumes:
+      - ./frontend:/usr/share/nginx/html
