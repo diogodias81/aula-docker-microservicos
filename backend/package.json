@@ -1,25 +1,17 @@
-{ 
-
-"name": "backend-recados", 
-
-"version": "1.0.0", 
-
-"description": "API simples para aula de Docker e microserviços", 
-
-"main": "server.js", 
-
-"scripts": { 
-
-"start": "node server.js" 
-
-}, 
-
-"dependencies": { 
-
-"cors": "^2.8.5", 
-
-"express": "^4.21.2" 
-
-} 
-
-}  
+{
+  "name": "backend-recados",
+  "version": "1.0.0",
+  "description": "Backend para o sistema de recados em microsserviços",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

@@ -19,7 +19,7 @@ app.get("/recados", (req, res) => {
   res.json(recados); 
 }); 
 
-// Rota para criar um novo recado (POST)
+
 app.post("/recados", (req, res) => { 
   const { texto } = req.body; 
 
@@ -36,12 +36,11 @@ app.post("/recados", (req, res) => {
   res.status(201).json(novoRecado); 
 }); 
 
-// Rota raiz para teste rápido no navegador
+
 app.get("/", (req, res) => { 
-  res.send("API de recados funcionando."); 
+  res.send("API de recados funcionando com sucesso no Docker!"); 
 }); 
 
-// Inicialização do servidor configurada para o ambiente Docker
 app.listen(PORT, "0.0.0.0", () => { 
-  console.log(`Servidor rodando em http://localhost:${PORT}`); 
+  console.log(`Servidor rodando com sucesso na porta ${PORT}`); 
 });
