@@ -63,7 +63,7 @@ label {
 }
 
 input[type="text"] {
-    width: 100%;
+    width: 120%;
     padding: 1.2rem;
     border: 1.2px solid var(--border-color);
     border-radius: 6px;
