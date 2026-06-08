@@ -1,33 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadro de recados</title>
+    <title>Sistema de Recados</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container"/>
-    <h1> Quadro de Recados</h1>
-    <p class = "subtitulo">Frontend + Backend + Docker Compose</p>
-    
-    <form id = "form-recado">
-        <input 
-        type = "text"
-        id = "texto"
-        placeholder = "Digite um recado"
-        required
-        />
-        <button type = "submit">Enviar</button>
-        </form>
+    <div class="container">
+        <header>
+            <h1>📌 Mural de Recados</h1>
+            <p>Deixe sua mensagem abaixo</p>
+        </header>
 
-    </div class = "acoes">
-        <button id="btn-atualizar">Atualizar lista</button>
+        <main>
+            <form id="form-recado" class="card">
+                <div class="form-group">
+                    <label for="texto">Digite seu recado:</label>
+                    <input type="text" id="texto" placeholder="Ex: Estudar Docker hoje à noite..." required>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Recado</button>
+            </form>
+
+            <div id="mensagem" class="status-message"></div>
+
+            <section class="recados-section">
+                <div class="section-header">
+                    <h2>Recados Recebidos</h2>
+                    <button id="btn-atualizar" class="btn btn-secondary">🔄 Atualizar</button>
+                </div>
+                <ul id="lista-recados" class="lista-recados">
+                    </ul>
+            </section>
+        </main>
     </div>
-    <h2>Recados</h2>
-        <ul id = "Lista-recados"></ul>
-        <p id="mensagem"></p>
-    </div>
+
     <script src="script.js"></script>
-    </body>
+</body>
 </html>
